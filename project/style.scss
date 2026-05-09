@@ -1,0 +1,230 @@
+@use "sass:color";
+
+$primary-color: #6c5ce7;
+$bg-light: #f4f7f6;
+$text-main: #2d3436;
+$text-gray: #636e72;
+$white: #ffffff;
+$transition: 0.3s ease;
+
+@function section-space($level) {
+  @return 20px * $level;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+• {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: $text-main;
+  background-color: $white;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: $primary-color;
+}
+
+.header {
+  background: $white;
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .container {
+    @include flex-between; 
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: $text-main;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: $transition;
+    &:hover { color: $primary-color; }
+  }
+}
+
+.about {
+  padding: section-space(4) 0; 
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__photo {
+    @include circle(200px); 
+    border: 5px solid $bg-light;
+  }
+
+  &__text {
+    h3 { font-size: 28px; margin-bottom: 10px; }
+    p { color: $text-gray; margin-bottom: 20px; }
+    
+    .skills {
+      list-style: none;
+      li {
+        display: inline-block;
+        background: $bg-light;
+        padding: 5px 15px;
+        margin: 5px;
+        border-radius: 5px;
+        border-left: 3px solid $primary-color;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.portfolio {
+  background-color: $bg-light;
+  padding: section-space(4) 0;
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+    .project-card {
+      flex: 1 1 calc(50% - 20px);
+      background: $white;
+      border-radius: 15px;      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      
+      img { width: 100%; height: 250px; object-fit: cover; }
+      &__info {
+        padding: 20px;
+        text-align: center;
+        a { color: $primary-color; text-decoration: none; font-weight: bold; }
+      }
+    }
+  }
+}
+
+.reviews {
+  padding: section-space(4) 0;
+
+  .reviews-grid {
+    display: flex;
+    gap: 30px;
+    
+    .review-item {
+      flex: 1;
+      text-align: center;
+      padding: 20px;
+      background: $bg-light;
+      border-radius: 15px;
+
+      &__avatar {
+        @include circle(80px);
+        margin: 0 auto 15px;
+        display: block;
+      }
+      h3 { font-size: 18px; margin-bottom: 5px; }
+      p { font-style: italic; font-size: 15px; color: $text-gray; }
+    }
+  }
+}
+
+.contacts {
+  padding: section-space(4) 0;
+  background-color: $white;
+
+  .contacts-wrapper {
+    display: flex;
+    gap: 50px;
+    
+    @media (max-width: 1024px) { flex-direction: column; }
+  }
+
+  .info {
+    flex: 1;
+    address {
+      font-style: normal;
+      p { margin-bottom: 15px; display: flex; align-items: center; }
+      i { color: $primary-color; margin-right: 15px; width: 20px; }
+      a { color: inherit; text-decoration: none; &:hover { color: $primary-color; } }
+    }
+    
+    .socials {
+      margin-top: 30px;
+      a { font-size: 24px; color: $primary-color; margin-right: 20px; transition: $transition; 
+          &:hover { transform: translateY(-3px); display: inline-block; }
+      }
+    }
+  }
+
+  .feedback-form {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    input, textarea {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      &:focus { outline: none; border-color: $primary-color; }
+    }
+
+    button {
+      padding: 15px;
+      background: $primary-color;
+      color: $white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: $transition;
+      &:hover { background: color.adjust($primary-color, $lightness: -10%); }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .portfolio .gallery .project-card { flex: 1 1 100%; }
+  .reviews-grid { flex-direction: column; }
+}
+      

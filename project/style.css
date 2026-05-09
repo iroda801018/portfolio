@@ -1,0 +1,252 @@
+@charset "UTF-8";
+• {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2d3436;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #6c5ce7;
+}
+
+.header {
+  background: #ffffff;
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #6c5ce7;
+}
+.header .nav a {
+  text-decoration: none;
+  color: #2d3436;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+.header .nav a:hover {
+  color: #6c5ce7;
+}
+
+.about {
+  padding: 80px 0;
+}
+.about__content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  .about__content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.about__photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 5px solid #f4f7f6;
+}
+.about__text h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.about__text p {
+  color: #636e72;
+  margin-bottom: 20px;
+}
+.about__text .skills {
+  list-style: none;
+}
+.about__text .skills li {
+  display: inline-block;
+  background: #f4f7f6;
+  padding: 5px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  border-left: 3px solid #6c5ce7;
+  font-size: 14px;
+}
+
+.portfolio {
+  background-color: #f4f7f6;
+  padding: 80px 0;
+}
+.portfolio .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.portfolio .gallery .project-card {
+  flex: 1 1 calc(50% - 20px);
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.portfolio .gallery .project-card img {
+  width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.portfolio .gallery .project-card__info {
+  padding: 20px;
+  text-align: center;
+}
+.portfolio .gallery .project-card__info a {
+  color: #6c5ce7;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.reviews {
+  padding: 80px 0;
+}
+.reviews .reviews-grid {
+  display: flex;
+  gap: 30px;
+}
+.reviews .reviews-grid .review-item {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  background: #f4f7f6;
+  border-radius: 15px;
+}
+.reviews .reviews-grid .review-item__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 auto 15px;
+  display: block;
+}
+.reviews .reviews-grid .review-item h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.reviews .reviews-grid .review-item p {
+  font-style: italic;
+  font-size: 15px;
+  color: #636e72;
+}
+
+.contacts {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+.contacts .contacts-wrapper {
+  display: flex;
+  gap: 50px;
+}
+@media (max-width: 1024px) {
+  .contacts .contacts-wrapper {
+    flex-direction: column;
+  }
+}
+.contacts .info {
+  flex: 1;
+}
+.contacts .info address {
+  font-style: normal;
+}
+.contacts .info address p {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+.contacts .info address i {
+  color: #6c5ce7;
+  margin-right: 15px;
+  width: 20px;
+}
+.contacts .info address a {
+  color: inherit;
+  text-decoration: none;
+}
+.contacts .info address a:hover {
+  color: #6c5ce7;
+}
+.contacts .info .socials {
+  margin-top: 30px;
+}
+.contacts .info .socials a {
+  font-size: 24px;
+  color: #6c5ce7;
+  margin-right: 20px;
+  transition: 0.3s ease;
+}
+.contacts .info .socials a:hover {
+  transform: translateY(-3px);
+  display: inline-block;
+}
+.contacts .feedback-form {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contacts .feedback-form input, .contacts .feedback-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+.contacts .feedback-form input:focus, .contacts .feedback-form textarea:focus {
+  outline: none;
+  border-color: #6c5ce7;
+}
+.contacts .feedback-form button {
+  padding: 15px;
+  background: #6c5ce7;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.contacts .feedback-form button:hover {
+  background: rgb(67.9090909091, 47.5454545455, 224.4545454545);
+}
+
+@media (max-width: 1024px) {
+  .portfolio .gallery .project-card {
+    flex: 1 1 100%;
+  }
+  .reviews-grid {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=style.css.map */

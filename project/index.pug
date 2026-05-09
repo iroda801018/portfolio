@@ -1,0 +1,89 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Персональный профиль | Ирода Каримова
+    link(rel="stylesheet" href="style.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css")
+  
+  body
+    header.header
+      .container
+        .logo IK Dev
+        nav.nav
+          a(href="#about") Обо мне
+          a(href="#portfolio") Портфолио
+          a(href="#reviews") Отзывы
+          a(href="#contacts") Контакты
+
+    section.about#about
+      .container
+        h2 О себе
+        .about__content
+          img(src="images/profile.jpg" alt="Фото Ироды Каримовой" class="about__photo")
+          .about__text
+            h3 Ирода Каримова
+            p Frontend-разработчик и энтузиаст технологий.
+            h4 Мои навыки:
+            ul.skills
+              li Адаптивная вёрстка (HTML5, CSS3, SCSS)
+              li Разработка на Python
+              li Базы данных SQL
+
+    section.portfolio#portfolio
+      .container
+        h2 Портфолио
+        .gallery
+          .project-card
+            img(src="images/project1.jpg" alt="Сайт-визитка")
+            .project-card__info
+              p Проект 1: Сайт на SCSS
+              a(href="#") Посмотреть
+          .project-card
+            img(src="images/project2.jpg" alt="Проект на Python")
+            .project-card__info
+              p Проект 2: Приложение на Python
+              a(href="#") Посмотреть
+
+    section.reviews#reviews
+      .container
+        h2 Отзывы клиентов
+        .reviews-grid
+          .review-item
+            img(src="images/user1.jpg" alt="Аватар клиента" class="review-item__avatar")
+            h3 Алексей Иванов
+            p "Отличная работа! Всё очень современно."
+          .review-item
+            img(src="images/user2.jpg" alt="Аватар клиента" class="review-item__avatar")
+            h3 Мария Петрова
+            p "Сайт идеально работает на моем iPhone 17!"
+
+    footer.contacts#contacts
+      .container
+        h2 Контакты
+        .contacts-wrapper
+          .info
+            address
+              p 
+                i.fas.fa-map-marker-alt
+                |  г. Калуга
+              p 
+                i.fas.fa-phone
+                a(href="tel:+79611260027") +79611260027
+              p 
+                i.fas.fa-envelope
+                a(href="mailto:lulu.lili.19@mail.ry") lulu.lili.19@mail.ru
+            .socials
+              a(href="#") 
+                i.fab.fa-instagram
+              a(href="#") 
+                i.fab.fa-telegram
+
+          form.feedback-form(action="#" method="POST")
+            h3 Обратная связь
+            input(type="text" name="name" placeholder="Ваше имя" required)
+            input(type="email" name="email" placeholder="Email" required)
+            textarea(name="message" placeholder="Сообщение" rows="5" required)
+            button(type="submit") Отправить
+                
